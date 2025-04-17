@@ -48,9 +48,9 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/music, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE) //How did they NOT already have this?
-		H.change_stat("strength", 1)
-		H.change_stat("intelligence", -1)
-		H.change_stat("endurance", 2) //So they can lay pipe like the hoes do
+		H.change_stat(STAT_STRING_STR, 1)
+		H.change_stat(STAT_STRING_INT, -1)
+		H.change_stat(STAT_STRING_END, 2) //So they can lay pipe like the hoes do
 		ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
 	if(H.dna?.species)

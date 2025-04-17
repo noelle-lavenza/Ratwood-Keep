@@ -49,13 +49,13 @@
 /obj/item/clothing/mask/rogue/spectacles/equipped(mob/living/carbon/human/user, slot, initial = FALSE, silent = FALSE)
 	. = ..()
 	if(!user.has_flaw(/datum/charflaw/badsight) && slot == SLOT_WEAR_MASK && user.STAPER < 5)
-		user.change_stat("perception", 4, "spectacles")
+		user.change_stat(STAT_STRING_PER, 4, "spectacles")
 		cured_eyesight = TRUE
 
 /obj/item/clothing/mask/rogue/spectacles/dropped(mob/living/carbon/human/user)
 	. = ..()
 	if(cured_eyesight)
-		user.change_stat("perception", 0, "spectacles")
+		user.change_stat(STAT_STRING_PER, 0, "spectacles")
 		cured_eyesight = FALSE
 
 /obj/item/clothing/mask/rogue/spectacles/delf

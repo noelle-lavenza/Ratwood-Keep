@@ -36,11 +36,11 @@
 	shoes = /obj/item/clothing/shoes/roguetown/armor
 	mask = /obj/item/clothing/mask/rogue/facemask/steel
 	neck = /obj/item/clothing/neck/roguetown/coif
-	H.change_stat("strength", 1)
-	H.change_stat("constitution", 1)
-	H.change_stat("intelligence", -3)
-	H.change_stat("perception", 2)
-	H.change_stat("speed", 2) //It's all about speed and perception
+	H.change_stat(STAT_STRING_STR, 1)
+	H.change_stat(STAT_STRING_CON, 1)
+	H.change_stat(STAT_STRING_INT, -3)
+	H.change_stat(STAT_STRING_PER, 2)
+	H.change_stat(STAT_STRING_SPD, 2) //It's all about speed and perception
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC) //gets dodge expert but no medium armor training - gotta stay light
 	ADD_TRAIT(H, TRAIT_DEATHBYSNUSNU, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_WANTED, TRAIT_GENERIC)
@@ -56,7 +56,7 @@
 			beltr = /obj/item/rogueweapon/huntingknife/idagger
 			backr = /obj/item/storage/backpack/rogue/satchel
 			backpack_contents = list(/obj/item/needle/thorn = 1, /obj/item/natural/cloth = 1)
-			H.change_stat("speed", 2)
+			H.change_stat(STAT_STRING_SPD, 2)
 		if("Bow & Sword") //Poacher
 			backl= /obj/item/gun/ballistic/revolver/grenadelauncher/bow
 			beltr = /obj/item/rogueweapon/sword/iron // sword like literally every refugee gets
@@ -66,5 +66,5 @@
 			backpack_contents = list(/obj/item/needle/thorn = 1, /obj/item/natural/cloth = 1, /obj/item/restraints/legcuffs/beartrap = 2) //poacher gets mantraps
 			H.mind.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 1, TRUE)
-			H.change_stat("strength", 1)
-			H.change_stat("perception", 1)
+			H.change_stat(STAT_STRING_STR, 1)
+			H.change_stat(STAT_STRING_PER, 1)

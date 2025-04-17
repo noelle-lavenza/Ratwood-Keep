@@ -1240,7 +1240,7 @@
 			active_item = TRUE
 			user.mind.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
 			to_chat(user, span_notice("Magicks flow throughout your body."))
-			user.change_stat("intelligence", 3)
+			user.change_stat(STAT_STRING_INT, 3)
 			return
 		else
 			to_chat(user, span_warning("The curiass feels cold and dead to the non-arcane."))
@@ -1251,8 +1251,8 @@
 			active_item = TRUE
 			user.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 			to_chat(user, span_notice("Strength flow throughout your body."))
-			user.change_stat("strength", 2)
-			user.change_stat("endurance", 2)
+			user.change_stat(STAT_STRING_STR, 2)
+			user.change_stat(STAT_STRING_END, 2)
 			return
 		else
 			to_chat(user, span_warning("The curiass feels cold and dead."))
@@ -1264,7 +1264,7 @@
 				var/mob/living/carbon/human/H = user
 				if(H.get_item_by_slot(SLOT_ARMOR) == src) //Hopefully fixes this last issue.
 					to_chat(H, span_notice("Gone is the arcane magicks enhancing thine abilities..."))
-					H.change_stat("intelligence", -3) //Ensure to not give inf intelligence.
+					H.change_stat(STAT_STRING_INT, -3) //Ensure to not give inf intelligence.
 					H.mind.adjust_skillrank(/datum/skill/magic/arcane, -1, TRUE)
 					active_item = FALSE
 					return
@@ -1275,8 +1275,8 @@
 				var/mob/living/carbon/human/H = user
 				if(H.get_item_by_slot(SLOT_ARMOR) == src) //Hopefully fixes this last issue.
 					to_chat(H, span_notice("Gone is the strength enhancing thine abilities..."))
-					user.change_stat("strength", -2)
-					user.change_stat("endurance", -2)
+					user.change_stat(STAT_STRING_STR, -2)
+					user.change_stat(STAT_STRING_END, -2)
 					H.mind.adjust_skillrank(/datum/skill/misc/athletics, -2, TRUE)
 					active_item = FALSE
 					return

@@ -65,8 +65,8 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/treatment, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE) // Don't go picking any COCKS around here or we're going to have a real problem.
-		H.change_stat("speed", 1)
-		H.change_stat("endurance", 2)
+		H.change_stat(STAT_STRING_SPD, 1)
+		H.change_stat(STAT_STRING_END, 2)
 	ADD_TRAIT(H, TRAIT_NUTCRACKER, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
 
@@ -109,8 +109,8 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/treatment, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
-		H.change_stat("intelligence", 1)
-		H.change_stat("endurance", 2)
+		H.change_stat(STAT_STRING_INT, 1)
+		H.change_stat(STAT_STRING_END, 2)
 	ADD_TRAIT(H, TRAIT_EMPATH, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
 	
@@ -150,9 +150,9 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/treatment, 2, TRUE)
-		H.change_stat("strength", 2) //Gotta look the part on examine.
-		H.change_stat("endurance", 1)
-		H.change_stat("intelligence", -2) //I'm erring on the side of caution because I can already see the complaining about the "combat prostitute" coming
+		H.change_stat(STAT_STRING_STR, 2) //Gotta look the part on examine.
+		H.change_stat(STAT_STRING_END, 1)
+		H.change_stat(STAT_STRING_INT, -2) //I'm erring on the side of caution because I can already see the complaining about the "combat prostitute" coming
 	ADD_TRAIT(H, TRAIT_DEATHBYSNUSNU, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
 

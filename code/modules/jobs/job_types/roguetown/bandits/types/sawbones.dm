@@ -37,12 +37,12 @@
 	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC) // Vital for any surgical role dealing in potentially decaying bodies.
 	ADD_TRAIT(H, TRAIT_DEATHBYSNUSNU, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_WANTED, TRAIT_GENERIC)
-	H.change_stat("strength", 1)
-	H.change_stat("intelligence", 2)
-	H.change_stat("speed", 1)
-	H.change_stat("fortune", 1)
+	H.change_stat(STAT_STRING_STR, 1)
+	H.change_stat(STAT_STRING_INT, 2)
+	H.change_stat(STAT_STRING_SPD, 1)
+	H.change_stat(STAT_STRING_LUC, 1)
 	if(H.age == AGE_OLD)
-		H.change_stat("intelligence", 1)
-		H.change_stat("perception", 1)
+		H.change_stat(STAT_STRING_INT, 1)
+		H.change_stat(STAT_STRING_PER, 1)
 	H.mind.AddSpell(new SPELL_DIAGNOSE_SECULAR)
 	H.ambushable = FALSE
