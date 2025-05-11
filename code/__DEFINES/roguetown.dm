@@ -29,7 +29,6 @@
 	/datum/species/human/halfelf,\
 	/datum/species/dwarf/mountain,\
 	/datum/species/aasimar,\
-	/datum/species/lupian,\
 	/datum/species/vulpkanin,\
 	/datum/species/moth,\
 	/datum/species/dracon,
@@ -45,6 +44,7 @@
 	/datum/species/elf/dark,\
 	/datum/species/tieberian,\
 	/datum/species/anthromorphsmall,\
+	/datum/species/lupian,\
 	/datum/species/kobold
 
 #define RACES_VERY_SHUNNED \
