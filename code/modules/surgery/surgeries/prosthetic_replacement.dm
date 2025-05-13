@@ -32,8 +32,12 @@
 	requires_bodypart = FALSE //need a missing limb
 	requires_missing_bodypart = TRUE
 	requires_bodypart_type = NONE
-	skill_min = SKILL_LEVEL_EXPERT
+	skill_min = SKILL_LEVEL_JOURNEYMAN
 	skill_median = SKILL_LEVEL_MASTER
+	/// The point at which the limb's attachment wound isn't added.
+	var/skill_no_wound = SKILL_LEVEL_LEGENDARY
+	/// A multiplier used to increase wound damage and bleed while at the minimum skill level.
+	var/const/unskilled_wound_multiplier = 1.5
 
 /datum/surgery_step/add_prosthetic/preop(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
 	var/obj/item/bodypart/bodypart = tool
@@ -56,7 +60,12 @@
 /datum/surgery_step/add_prosthetic/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/intent/intent)
 	var/obj/item/bodypart/bodypart = tool
 	if(bodypart.attach_limb(target) && bodypart.attach_wound)
-		bodypart.add_wound(bodypart.attach_wound)
+		var/skill_level = user.mind?.get_skill_level(skill_used)
+		if(skill_level < skill_no_wound)
+			var/datum/wound/attachment_wound = bodypart.add_wound(bodypart.attach_wound)
+			if(skill_level <= skill_min) // at the minimum skill level the wound is extra nasty
+				attachment_wound.whp *= unskilled_wound_multiplier
+				attachment_wound.bleed_rate *= unskilled_wound_multiplier
 		var/mob/living/carbon/human/human_target = target
 		var/obj/item/bodypart/target_head = human_target.get_bodypart(BODY_ZONE_HEAD)
 		if(target_head && human_target.stat < DEAD) // If the head is reattached and the body is rotten, it'll kickstart the rot timer again and revive them as a deadite immediately.
