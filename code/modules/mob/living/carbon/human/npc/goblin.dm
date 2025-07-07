@@ -201,7 +201,7 @@
 	//addtimer(CALLBACK(src, PROC_REF(after_creation)), 10)
 
 /mob/living/carbon/human/species/goblin/handle_combat()
-	if(mode == NPC_AI_HUNT)
+	if(mode == NPC_AI_COMBAT)
 		if(prob(2))
 			emote("laugh")
 	. = ..()

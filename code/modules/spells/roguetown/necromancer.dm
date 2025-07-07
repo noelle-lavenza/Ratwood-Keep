@@ -371,7 +371,7 @@
 		ADD_TRAIT(src, TRAIT_ZIZO_MARKED, TRAIT_GENERIC)
 	else //npc
 		aggressive = 1
-		mode = NPC_AI_HUNT
+		mode = NPC_AI_COMBAT
 		wander = TRUE
 
 	if(!mind)
